@@ -2,6 +2,12 @@ from bs4 import BeautifulSoup
 import requests
 import csv
 
+def countCharsInList(list):
+    num_chars = [len(i) for i in list]
+    sum(num_chars)
+    return num_chars
+
+
 ###############################################################################
 # Names
 ###############################################################################
@@ -12,7 +18,7 @@ soup = BeautifulSoup(source, 'lxml')
 #print(soup.prettify())
 top400 = []
 
-csv_file = open('top400_scrape.csv', 'w')
+csv_file = open('top400_scrapeW.csv', 'w')
 
 csv_writer = csv.writer(csv_file)
 csv_writer.writerow(['Name'])
